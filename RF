@@ -1,7 +1,8 @@
 #RF
   1. O Sistema deverá:
   1. Ser desenvolvido em uma página WEB, em um formato de abas;
-  1. Possuir cadastro de professores para os mesmos alterarem os arquisos e pastas;
+  1. Possuir cadastro de professores para os mesmos alterarem os arquivos e pastas;
   1. Armazenar os arquivos em um servidor;
-  1. Ter uma aba inicial denominada "Conteúdos" com algumas fotos com o nome das matérias, ao clicar na foto com a matéria desejada o usuário será direcionado a uma nova página com o assunto escolhido.  
+  1. Ter uma aba inicial denominada "Conteúdos" com algumas fotos com o nome das matérias, ao clicar na foto com a matéria desejada o usuário será direcionado a uma nova página com o assunto escolhido.
   1. Conter uma aba para avaliações do site;
+Teste teste
