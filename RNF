@@ -1,0 +1,9 @@
+#RNF
+1. O Sistema deverá:
+1. Um server de armazenamento;
+1. Um sistema de segurança contra invasões;
+1. Ser de fácil manejo;
+1. Ser de fácil aprendizagem para os professores;
+1. Um host que suporte tráfego moderado;
+1. Taxa mínima de ocorrência de falhas;
+1. Volume de dados moderado.
