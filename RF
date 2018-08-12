@@ -1,11 +1,11 @@
-#RF
+#Requisitos Funcionais
+
   1. O Sistema deverá:
   1. Ser desenvolvido em uma página WEB, em um formato de abas;
   1. Possuir cadastro de professores para os mesmos alterarem os arquivos e pastas;
-  1. Ter uma aba inicial denominada "Conteúdos" com algumas fotos com o nome das matérias, ao clicar na foto com a matéria desejada o usuário será direcionado a uma nova página com o assunto escolhido.  
+  1. Ter uma aba inicial denominada "Conteúdos" com algumas fotos com o nome das matérias, ao clicar na foto com a matéria desejada o usuário será direcionado a uma nova página com o assunto escolhido;  
   1. Conter uma aba para avaliações do site;
-  1. Possuir um design em formas geométricas
-  1. Ter uma página com as curiosidades e histórias da matemática
-  1. Um espaço para a consulta da série desejada
-  1. Um parte de interação entre professores e alunos
-  
+  1. Possuir um design em formas geométricas;
+  1. Ter uma página com as curiosidades e histórias da matemática;
+  1. Um espaço para a consulta da ementa da série desejada;
+  1. Um parte de interação entre professores e alunos;
