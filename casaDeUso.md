@@ -48,103 +48,112 @@
 # CDU 03 - Busca
 **Atores:** Aluno, professor e ADM
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:**
 
 **Fluxo principal:**
---Inacabado--
+1. O usuário deverá digitar o assunto desejado no campo de busca;
+2. O sistema verifica se o assunto pesquisado existe;
+3. O sistema exibe o assunto pesquisado na tela, caso ele exista;
+4. O sistema informa o usuário caso o assunto não exista;
 
 # CDU 04 - Réplica ou Respostas
-**Atores:** --Inacabado--
+**Atores:** Alunos, professores
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:**
 
 **Fluxo principal:**
---Inacabado--
+1. O usuário (aluno ou professor) responde uma pergunta feita por outro usuário anteriormente;
 
 # CDU 05 - Inserção de comentários
-**Atores:** --Inacabado--
+**Atores:** Alunos, professores
 
 **Pré-condições:** --Inacabado--
 
 **Fluxo principal:**
---Inacabado--
+1. O usuário (aluno ou professor) insere uma pergunta referente a algum assunto específico;
 
 # CDU 06 - Classificação de conteúdos
-**Atores:** --Inacabado--
+**Atores:** Professor
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:** O usuário precisa ser do cargo "Professor";
 
 **Fluxo principal:**
---Inacabado--0
+1. O usuário classifica um determinado arquivo. Podendo classificá-lo por tipo de arquivo (ex: Lista de exercícios, etc).
 
 # CDU 07 - Baixar arquivos
-**Atores:** --Inacabado--
+**Atores:** usuário, professor, ADM
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:** Estar no site
 
 **Fluxo principal:**
---Inacabado--
+1. O usuário clica no botão e efetua o download do arquivo;
 
 # CDU 08 - Marcação de conteúdos
-**Atores:** --Inacabado--
+**Atores:** Aluno, Professor
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:** Estar no site
 
 **Fluxo principal:**
---Inacabado--
+1. O usuário clica no botão de marcação e o assunto determinado fica marcado como lido.
 
 # CDU 09 - Enviar conteúdos
-**Atores:** --Inacabado--
+**Atores:** professor
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:** Ser do cargo "Professor"
 
 **Fluxo principal:**
---Inacabado--
+1. O professor clica no botão de upload;
+2. O sistema abre uma janela para que o usuário selecione o arquivo desejado;
+3. O usuário envia o arquivo para o site.
+4. O sistema armazena o arquivo.
 
 # CDU 10 - Excluir arquivos
-**Atores:** --Inacabado--
+**Atores:** professor e ADM
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:** O usuário deve ser do cargo "professor"
 
 **Fluxo principal:**
---Inacabado--
+1. O professor clica no botão que exclui o arquivo.
+2. O sistema gera uma mensagem perguntando se o usuário realmente deseja excluir o arquivo.
+3. O sistema exclui o arquivo caso o professor confirmar a exclusão
 
 # CDU 11 - Fixar comentários
-**Atores:** --Inacabado--
+**Atores:** professor e ADM
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:** Ser do cargo "professor"
 
 **Fluxo principal:**
---Inacabado--
+1. O professor clica no botão de fixar comentários e o comentário fica fixado no topo da lista de comentários.
 
 # CDU 12 - Excluir professores
-**Atores:** --Inacabado--
+**Atores:** ADM
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:** Ser um ADM
 
 **Fluxo principal:**
---Inacabado--
+1. O ADM exclui a conta do professor do professor do site.
 
 # CDU 13 - Visualizar conteúdos
-**Atores:** --Inacabado--
+**Atores:** Alunos, professores e ADM's
 
-**Pré-condições:** --Inacabado--
-
-**Fluxo principal:**
---Inacabado--
-
-# CDU 14 - Exluir alunos
-**Atores:** --Inacabado--
-
-**Pré-condições:** --Inacabado--
+**Pré-condições:** Estar no site
 
 **Fluxo principal:**
---Inacabado--
+1. O navegante visualiza os conteúdos do site.
+
+# CDU 14 - Excluir alunos
+**Atores:** Professor e ADM
+
+**Pré-condições:** Ser do cargo "professor"
+
+**Fluxo principal:**
+1. O professor vai até o perfil do aluno e clica no botão de deletar a conta
+2. O sistema pergunta se o professor realmente deseja excluir a conta do aluno e pede para que o professor faça uma descrição do motivo da exclusão;
 
 # CDU 15 - Cadastro de novos conteúdos matemáticos
-**Atores:** --Inacabado--
+**Atores:** professor
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:** O usuário precisa ser da classe "professor"
 
 **Fluxo principal:**
---Inacabado--
+1. O usuário cadastra um determinado arquivo, classificando-o por conteúdo (ex: P.A, P.G, Probabilidade, etc).
