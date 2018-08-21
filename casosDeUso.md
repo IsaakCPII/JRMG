@@ -2,8 +2,8 @@
 
 # Sumário
 
-- [CDU 01 - Cadastro ](#cdu-01---Cadastro)
-- [CDU 02 - Autentificação](#cdu-02---Autentificação)
+- [CDU 01 - Cadastro ](#cdu-01---cadastro)
+- [CDU 02 - Autentificação](#cdu-02---autenticação)
 - [CDU 03 - Busca](#cdu-03---Busca)
 - [CDU 04 - Réplica ou Respostas](#cdu-04---Réplica--ou--Respostas)
 - [CDU 05 - Inserção de comentários](#cdu-05---Inserção--de--comentários)
@@ -34,7 +34,7 @@
 7. O sistema salva o cadastro e cria a conta caso não ocorra nenhum erro;
 
 
-# CDU 02 - Autentificação
+# CDU 02 - Autenticação
 **Atores:** Aluno e Professor
 
 **Pré-condições:** O usuário precisa estar cadastrado no site.
