@@ -5,7 +5,7 @@
 - [CDU 01 - Cadastro ](#cdu-01---Cadastro)
 - [CDU 02 - Autentificação](#cdu-02---Autentificação)
 - [CDU 03 - Busca](#cdu-03---Busca)
-- [CDU 04 - Réplica ou Respostas](#cdu-04---Réplica ou Respostas)
+- [CDU 04 - Réplica ou Respostas](#cdu-04---Réplica--ou--Respostas)
 - [CDU 05 - Inserção de comentários](#cdu-05---Inserção de comentários)
 - [CDU 06 - Classificação de conteúdos](#cdu-06---Classificação de conteúdos)
 - [CDU 07 - Baixar arquivos](#cdu-07---Baixar arquivos)
@@ -67,7 +67,7 @@
 # CDU 05 - Inserção de comentários
 **Atores:** Alunos, professores
 
-**Pré-condições:** --Inacabado--
+**Pré-condições:** O usuário deverá possuir uma conta no site
 
 **Fluxo principal:**
 1. O usuário (aluno ou professor) insere uma pergunta referente a algum assunto específico;
