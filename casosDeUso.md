@@ -57,15 +57,16 @@
 
 
 # CDU 04 - Inserção de comentários
-**Atores:** Alunos, professores
+**Atores:** Alunos, professores e ADM
 
 **Pré-condições:** O usuário deverá possuir uma conta no site
 
 **Fluxo principal:**
 1. O usuário (aluno ou professor) insere uma pergunta referente a algum assunto específico;
+2. O usuário pode comentar um comentário, gerando com isso uma resposta;
 
 # CDU 05 - Gerenciar arquivos
-**Atores:** Professor
+**Atores:** Professor e ADM
 
 **Pré-condições:** O usuário precisa ser do cargo "Professor";
 
@@ -81,7 +82,7 @@
 1. O usuário clica no botão e efetua o download do arquivo;
 
 # CDU 07 - Marcação de conteúdos
-**Atores:** Aluno, Professor
+**Atores:** Aluno, Professor e ADM
 
 **Pré-condições:** Estar no site
 
@@ -103,7 +104,8 @@
 **Pré-condições:** Ser um ADM
 
 **Fluxo principal:**
-1. O ADM exclui a conta do professor do professor do site.
+1. O ADM exclui a conta do professor do professor do site;
+2. O ADM cria um professor;
 
 # CDU 10 - Visualizar conteúdos
 **Atores:** Alunos, professores e ADM's
