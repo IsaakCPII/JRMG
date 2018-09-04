@@ -10,7 +10,8 @@ CREATE TABLE usuario (
 CREATE TABLE professor (
 	id INT NOT NULL,
 	matricula VARCHAR(10) NOT NULL,
-	PRIMARY KEY(id)
+	PRIMARY KEY(id),
+	FOREIGN KEY (id) REFERENCES usuario(id)
 	);
 
 
