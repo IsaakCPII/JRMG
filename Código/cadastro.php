@@ -33,14 +33,14 @@
         <body>
         <!--<h1>Crie sua conta</h1>-->
         <div> <br><br>
-          <form action="falta colocaaaaaaaaaaaaaaaaaaaaaaaaaar" method="post">
+          <form action="Control/User/Cadastrauser.php"  method="post">
 
 
           <label><b>CADASTRO</b></label><br><br>
-          <label>Nome: </label><input type="name" style="border:0;" name="nome" required placeholder="Digite seu nome."><br>
-          <label>E-mail: </label><input type="email" style="border:0;" name="email" required placeholder="Digite seu e-mail."><br>
-          <label>Senha: </label><input type="password" style="border:0;" required name="senha"><br><br>
-          <input type="button" value="Enviar" name="botao"><br><br>
+          <label>Nome: </label><input type="name" style="border:0;" name="nome" required minlength= "3" maxlength= "35" placeholder="Digite seu nome."><br>
+          <label>E-mail: </label><input type="email" style="border:0;" name="email" required  placeholder="Digite seu e-mail."><br>
+          <label>Senha: </label><input type="password" style="border:0;" required  name="senha"><br><br>
+          <input type="submit" value="Enviar" "><br><br>
 
           </form>
         </div>
