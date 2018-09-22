@@ -51,7 +51,6 @@
       <form action="Control/User/Cadastrauser.php"  method="post">
         <label><b>LOGIN</b></label><br><br>
         <label>E-mail: </label><input type="email"  name="email" required  placeholder="Digite seu e-mail." class="a"><br>
-        <label>Matricula: </label><input type="text"  name="matricula" id="1" placeholder="Digite sua matricula." class="a"><br>
         <label>Senha: </label><input type="password"  required  name="senha" placeholder="Digite sua senha." class="a"><br><br>
         <input type="submit" value="Entrar"><br>
       </form>
