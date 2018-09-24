@@ -1,4 +1,17 @@
+<?php
+	session_start();
+
+	if(empty($_SESSION['erroLogin']) == false)
+	{
+	$erro = $_SESSION['erroLogin'];
+	}
+	else {
+		$erro = null;
+	}
+?>
+
 <!DOCTYPE HTML lang="pt-br">
+
 <style>
   body, html {
     height: 100%;
@@ -48,10 +61,19 @@
       <img class="imgm"  src="b.png"/>
     </div>
     <div class="cadastrinho"> <br>
-      <form action="Control/User/Cadastrauser.php"  method="post">
+
+      <?php if ($erro != null) { ?>
+
+        <div class="alert alert-warning">
+          <p> Erro: <?= $erro ?> </p>
+
+        </div>
+      <?php } ?>
+
+      <form action="Control/User/loginuser.php"  method="post">
         <label><b>LOGIN</b></label><br><br>
-        <label>E-mail: </label><input type="email"  name="email" required  placeholder="Digite seu e-mail." class="a"><br>
-        <label>Senha: </label><input type="password"  required  name="senha" placeholder="Digite sua senha." class="a"><br><br>
+        <label>E-mail: </label><input type="email"  name="email1" required  placeholder="Digite seu e-mail." class="a"><br>
+        <label>Senha: </label><input type="password"  required  name="senha1" placeholder="Digite sua senha." class="a"><br><br>
         <input type="submit" value="Entrar"><br>
       </form>
     </div>

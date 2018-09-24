@@ -1,6 +1,5 @@
 <?php
-
-  require_once("criarconexaobd.php");
+  require_once("../../Table/criarconexaobd.php");
   /*Login dos alunos-->*/
   /* !!!!!!!!! NÃO TEMOS CERTEZA SE ESSES BGLHS ESTÃO FUNCIONANDO !!!!!!!*/
   /* Essa função aqui vai buscar o email do cara, se existir, e irá retorná-lo. */
@@ -25,14 +24,14 @@
       }
 
   $erro = null;
-	$request = array_map('trim', $_REQUEST);
-	$request = filter_var_array(
-	               $request,
-	               [ 'email' => FILTER_VALIDATE_EMAIL,
-	                 'senha' => FILTER_DEFAULT ]
+	$_request = array_map('trim', $_REQUEST);
+	$_request = filter_var_array(
+	               $_request,
+	               [ 'email1' => FILTER_VALIDATE_EMAIL,
+	                 'senha1' => FILTER_DEFAULT ]
 	           );
-	$email = $request['email'];
-	$senha = $request['senha'];
+	$email = $_request['email1'];
+	$senha = $_request['senha1'];
 	if ($email == false)
 	{
 		$erro = "E-Mail não informado";
@@ -42,19 +41,25 @@
 		$erro = "Senha não informada";
 	}
 
-	else if ($email != verificaEmail($email)){
+	else if (verificaEmail($email) == true){
 		$erro = "Nenhum usuário cadastrado com o email informado";
 	}
 
-	else if (password_verify($senha, $verificaSenha($senha) == false)
+
+
+	else if (password_verify($senha, verificaSenha($senha) == false))
 	{
 		$erro = "Senha inválida";
 	}
 	// PENDENTE: Em caso de sucesso, redirecionar o usuário para a página de pedidos
 	// PENDENTE: Em caso de erro, redirecionar usuário para a página de login para exibir as mensagens de erro
 	if($erro != null){
-		session_start();
-		$_SESSION['erroLogin'] = $erro;
-		header('Location: ../login-aluno.php');
+
+		header('Location: ../../cadastro.php');
 	}
+
+  else {
+    header('Location: ../../conteudo.php');
+  }
+
 ?>

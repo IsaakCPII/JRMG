@@ -55,7 +55,7 @@
     <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
       <img class="imgm"  src="b.png"/>
     </div>
-    
+
     <div class="cadastrinho"> <br>
       <!--ALuno--><a href="login-aluno.php"><img src="1.png" class="seleca"></a>
       <!--Professor--><a href="login-professor.php"><img src="2.png" class="selecab"></a>
