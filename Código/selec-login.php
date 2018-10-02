@@ -1,3 +1,17 @@
+<?php
+	session_start();
+
+	if(empty($_SESSION['erroLogin']) == false)
+	{
+	   $erro = $_SESSION['erroLogin'];
+	   unset($_SESSION['erroLogin']);
+	}
+	else {
+		$erro = null;
+	}
+
+
+?>
 <!DOCTYPE HTML lang="pt-br">
 <style>
   body, html {
@@ -57,6 +71,12 @@
     </div>
 
     <div class="cadastrinho"> <br>
+      <?php if ($erro != null) { ?>
+        <div class="alert alert-warning">
+          <p> Erro: <?= $erro ?> </p>
+
+        </div>
+      <?php } ?>
       <!--ALuno--><a href="login-aluno.php"><img src="1.png" class="seleca"></a>
       <!--Professor--><a href="login-professor.php"><img src="2.png" class="selecab"></a>
     </div>

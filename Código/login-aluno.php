@@ -1,13 +1,20 @@
 <?php
 	session_start();
 
+
 	if(empty($_SESSION['erroLogin']) == false)
 	{
-	$erro = $_SESSION['erroLogin'];
+		$erro = $_SESSION['erroLogin'];
+		unset($_SESSION['erroLogin']);
 	}
 	else {
 		$erro = null;
 	}
+
+	if ($_SESSION['emailUsuarioLogado'] != "") {
+		header('Location: conteudo.php');
+	}
+
 ?>
 
 <!DOCTYPE HTML lang="pt-br">

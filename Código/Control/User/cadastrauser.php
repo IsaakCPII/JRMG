@@ -56,7 +56,7 @@ require_once("../../Table/tableuser.php");
       }
     }
     else{
-      $erros[]="Esta Matrícula não exixte.";
+      $erros[]="Esta Matrícula não existe.";
     }
   }
     if(buscausuario($request['email'])>0){
@@ -65,7 +65,11 @@ require_once("../../Table/tableuser.php");
 
 
     if (empty($erros) == true) {
-  	insereuser($request);
+  	   insereuser($request);
+       header("Location: ../../selec-login.php");
+    }
+    else{
+
     }
 
 
