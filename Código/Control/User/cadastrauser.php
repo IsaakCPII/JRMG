@@ -72,5 +72,5 @@ require_once("../../Table/tableuser.php");
  ?>
 
  <?php foreach($erros as $msg) { ?>
- 			<li><?= $msg ?></li>
+ 			<script> alert("<?= $msg ?>");</script>
  		<?php } ?>

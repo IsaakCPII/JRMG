@@ -51,6 +51,7 @@
    function desbloqueia(){
 	 let checkbox = document.getElementById("1");
      checkbox.disabled = ! checkbox.disabled;
+     checkbox.visibility = (checkbox.visibility == 'visible') ? 'hidden' : 'visible';
    }
 </script>
 <html lang="pt-br">
