@@ -38,9 +38,7 @@ require_once("../../Table/tableuser.php");
 
     elseif (strlen($senha) < 6 || strlen($senha) > 12 ) {
       	$erros[] = "A quantidade de caracteres da senha deve estar entre 6 e 12";
-
     }
-
     $cont = 0;
     $matricula = $request['matricula'];
     foreach ($matriculas_cadastradas as $mc) {
@@ -63,18 +61,13 @@ require_once("../../Table/tableuser.php");
         $erros[] = "Email já existe" ;
     }
 
-
-    if (empty($erros) == true) {
-  	   insereuser($request);
-       header("Location: ../../selec-login.php");
+    if($erros != null){
+      session_start();
+      $_SESSION['erroLogin'] = $erros;
+      header('Location: ../../cadastro.php');
     }
-    else{
-
+    else {
+      insereuser($request);
+      header('Location: ../../selec-login.php');
     }
-
-
  ?>
-
- <?php foreach($erros as $msg) { ?>
- 			<script> alert("<?= $msg ?>");</script>
- 		<?php } ?>

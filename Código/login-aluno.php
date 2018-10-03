@@ -72,7 +72,7 @@
       <?php if ($erro != null) { ?>
 
         <div class="alert alert-warning">
-          <p> Erro: <?= $erro ?> </p>
+          <script>alert("<?= $erro ?>");</script>
 
         </div>
       <?php } ?>

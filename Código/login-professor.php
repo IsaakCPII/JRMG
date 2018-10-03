@@ -1,6 +1,5 @@
 <?php
 	session_start();
-
   if(empty($_SESSION['erroLogin']) == false)
 	{
 		$erro = $_SESSION['erroLogin'];
@@ -9,11 +8,9 @@
 	else {
 		$erro = null;
 	}
-
 	if ($_SESSION['emailUsuarioLogado'] != "") {
 		header('Location: conteudo.php');
 	}
-
 ?>
 <!DOCTYPE HTML lang="pt-br">
 <style>
@@ -66,15 +63,14 @@
     </div>
     <div class="cadastrinho">
       <?php if ($erro != null) { ?>
-
         <div class="alert alert-warning">
-          <p> Erro: <?= $erro ?> </p>
-
-        </div>
+					<ul>
+						<script> alert("<?= $erro ?>"); </script>
+					</ul>
+				</div>
       <?php } ?>
       <br>
       <form action="Control/User/loginprof.php"  method="post">
-
         <label><b>LOGIN</b></label><br><br>
         <label>E-mail: </label><input type="email"  name="email" required  placeholder="Digite seu e-mail." class="a"><br>
         <label>Matrícula: </label><input type="matricula"  name="matricula" required  placeholder="Digite sua matricula." class="a"><br>

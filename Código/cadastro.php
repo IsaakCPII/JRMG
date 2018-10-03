@@ -1,3 +1,14 @@
+<?php
+	session_start();
+  if(empty($_SESSION['erroLogin']) == false)
+  {
+    $erros = $_SESSION['erroLogin'];
+    unset($_SESSION['erroLogin']);
+  }
+  else {
+    $erros = null;
+  }
+?>
 <!DOCTYPE HTML>
 <style media="screen">
   body, html {
@@ -62,7 +73,16 @@
       <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
         <img class="imgm"  src="b.png"/>
       </div>
-      <div class="cadastrinho"> <br>
+      <div class="cadastrinho">
+        <?php if ($erros != null) { ?>
+          <div class="alert alert-warning">
+               <?php  foreach ($erros as $e) { ?>
+                  <script> alert ("<?= $e ?>"); </script>
+                <?php } ?>
+
+          </div>
+        <?php } ?>
+        <br>
         <form action="Control/User/Cadastrauser.php"  method="post">
           <label><b>CADASTRO</b></label><br><br>
           <label>Nome: </label><input type="name" name="nome" required minlength= "3" maxlength= "35" placeholder="Digite seu nome." class="a"><br>
