@@ -1,3 +1,17 @@
+<?php
+	session_start();
+  if(empty($_SESSION['erroLogin']) == false)
+	{
+		$erro = $_SESSION['erroLogin'];
+		unset($_SESSION['erroLogin']);
+	}
+	else {
+		$erro = null;
+	}
+	if (empty($_SESSION['emailUsuarioLogado']) == false) {
+		header('Location: conteudo.php');
+	}
+?>
 <!DOCTYPE HTML lang="pt-br">
 <style>
   body, html {
@@ -47,10 +61,19 @@
     <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
       <img class="imgm"  src="b.png"/>
     </div>
-    <div class="cadastrinho"> <br>
-      <form action="Control/User/Cadastrauser.php"  method="post">
+    <div class="cadastrinho">
+      <?php if ($erro != null) { ?>
+        <div class="alert alert-warning">
+					<ul>
+						<script> alert("<?= $erro ?>"); </script>
+					</ul>
+				</div>
+      <?php } ?>
+      <br>
+      <form action="Control/User/loginprof.php"  method="post">
         <label><b>LOGIN</b></label><br><br>
         <label>E-mail: </label><input type="email"  name="email" required  placeholder="Digite seu e-mail." class="a"><br>
+        <label>Matrícula: </label><input type="matricula"  name="matricula" required  placeholder="Digite sua matricula." class="a"><br>
         <label>Senha: </label><input type="password"  required  name="senha" placeholder="Digite sua senha." class="a"><br><br>
         <input type="submit" value="Entrar"><br>
       </form>

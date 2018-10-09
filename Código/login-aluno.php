@@ -1,13 +1,20 @@
 <?php
 	session_start();
 
+
 	if(empty($_SESSION['erroLogin']) == false)
 	{
-	$erro = $_SESSION['erroLogin'];
+		$erro = $_SESSION['erroLogin'];
+		unset($_SESSION['erroLogin']);
 	}
 	else {
 		$erro = null;
 	}
+
+	if (empty($_SESSION['emailUsuarioLogado']) == false) {
+		header('Location: conteudo.php');
+	}
+
 ?>
 
 <!DOCTYPE HTML lang="pt-br">
@@ -42,6 +49,9 @@
     margin-right: auto;
     display: block;
   }
+	.erro{
+		height: 10%;
+	}
   .a{
     border: 0;
     width: 62%;
@@ -62,9 +72,8 @@
     </div>
     <div class="cadastrinho"> <br>
 
-      <?php if ($erro != null) { ?>
-
-        <div class="alert alert-warning">
+			<?php if ($erro != null) { ?>
+        <div class="erro">
           <p> Erro: <?= $erro ?> </p>
 
         </div>

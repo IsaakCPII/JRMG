@@ -1,3 +1,17 @@
+<?php
+	session_start();
+
+	if(empty($_SESSION['erroLogin']) == false)
+	{
+	   $erro = $_SESSION['erroLogin'];
+	   unset($_SESSION['erroLogin']);
+	}
+	else {
+		$erro = null;
+	}
+
+
+?>
 <!DOCTYPE HTML lang="pt-br">
 <style>
   body, html {
@@ -15,6 +29,7 @@
     background-size: cover;
     background-attachment: fixed;
   }
+
   .cadastrinho{
     background-color: white;
     border-radius: 10px;
@@ -29,6 +44,9 @@
     margin-right: auto;
     display: block;
   }
+	.erro{
+		height: 10%;
+	}
   .a{
     border: 0;
     width: 62%;
@@ -57,6 +75,12 @@
     </div>
 
     <div class="cadastrinho"> <br>
+      <?php if ($erro != null) { ?>
+        <div class="erro">
+          <p> Erro: <?= $erro ?> </p>
+
+        </div>
+      <?php } ?>
       <!--ALuno--><a href="login-aluno.php"><img src="1.png" class="seleca"></a>
       <!--Professor--><a href="login-professor.php"><img src="2.png" class="selecab"></a>
     </div>
