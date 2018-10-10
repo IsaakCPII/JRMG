@@ -50,16 +50,11 @@
   </head>
   <body>
     <div class="sup_estatica">
-        <a href="Control/User/sair.php">Sair</a>
+			<a href="envioConteudos.php">Enviar novos conteúdos</a>
+      <a href="Control/User/sair.php">Sair</a>
     </div>
-    <!--<div class="lateral">
-				- Pederastia sem fim <br>
-				- Celibatário <br>
-				- Gadareno <br>
-				- Kayn
-    </div>-->
     <div class="conteudinhos">
-      <a href="conteudos/a.html"><img class="imagenzinhas" src="o.png"></a>
+      <a href="paginaRotativa.php"><img class="imagenzinhas" src="o.png"></a>
       <a href="conteudos/b.html"><img class="imagenzinhas" src="p.png"></a>
       <a href="conteudos/c.html"><img class="imagenzinhas" src="q.png"></a>
       <a href="conteudos/d.html"><img class="imagenzinhas" src="r.png"></a>

@@ -23,36 +23,20 @@
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-	  display: block;
+    display: block;
   }
   .div_sup{
-
-
-  }
-
-
-  .sup_estatica{
-    background-color: white;
-    height: 5%;
     position: relative;
-    margin-top: -10px;
-    margin-right: -10px;
-    margin-left: -10px;
-    border-style:inset;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
   }
-  .sup_estatica{
-    background-color: white;
-    height: 5%;
-    position: relative;
-    margin-top: -10px;
-    margin-right: -10px;
-    margin-left: -10px;
-    border-style:inset;
-    text-align: right;
-    padding: 0.5%;
-  }
+.sup_estatica{
+		float: right;
+    position: absolute;
+	}
   a{
-    color:black;
+    color:white;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
   }
 </style>
@@ -65,7 +49,7 @@
       <a href="selec-login.php"> Login </a>
       <a href="cadastro.php"> Cadastro </a>
     </div>
-    <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
+    <div class="div_sup" style="transform: translateY(0px); opacity: 1;">
       <img class="imgm"  src="b.png"/>
     </div>
 
