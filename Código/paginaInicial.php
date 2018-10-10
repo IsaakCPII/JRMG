@@ -15,7 +15,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  background-attachment: fixed;
+    background-attachment: fixed;
 
   }
   .imgm{
@@ -26,14 +26,10 @@
     display: block;
   }
   .div_sup{
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    display:block;
+
   }
-.sup_estatica{
-		float: right;
-    position: absolute;
+  .sup_estatica{
+    text-align: right;
 	}
   a{
     color:white;

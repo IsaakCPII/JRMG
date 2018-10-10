@@ -1,5 +1,9 @@
 <?php
 	session_start();
+	$erro;
+	if(!empty($_SESSION['erro'])){
+		$erro = $_SESSION['erro'];
+	}
   $email = $_SESSION['emailUsuarioLogado'];
 	if ($_SESSION['emailUsuarioLogado'] == "") {
     $_SESSION['erroLogin'] = "Você ainda não está logado.";
@@ -50,6 +54,12 @@
   </head>
   <body>
     <div class="sup_estatica">
+			<?php if ($erro != null) { ?>
+        <div class="erro">
+          <p> Erro: <?= $erro ?> </p>
+
+        </div>
+      <?php } ?>
 			<a href="envioConteudos.php">Enviar novos conteúdos</a>
       <a href="Control/User/sair.php">Sair</a>
     </div>

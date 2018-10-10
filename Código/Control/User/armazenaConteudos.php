@@ -1,11 +1,18 @@
 <?php
+session_start();
+if(!empty($_SESSION['idProfessorLogado'];)){
 require_once("../../Table/criarconexaobd.php");
-  function enviarClass($class, $Larq){
+
+
+  $Id = $_SESSION['idProfessorLogado'];
+
+  function enviarClass($class, $id, $Larq){
     $bd = criaconexaobd();
     $sql = $bd -> prepare(
       "INSERT INTO conteudos (classificacao, id_prof, arquivo)
-      Values (:valclass, 14, :valLarq);");
+      Values (:valclass, :valid , :valLarq);");
       $sql -> bindValue(':valclass', $class);
+      $sql -> bindValue(':valid', $id);
       $sql -> bindValue(':valLarq', $Larq);
       $sql -> execute();
   }
@@ -39,13 +46,19 @@ require_once("../../Table/criarconexaobd.php");
   {
     $erro = "Digite a classificação do conteúdo! (ex. 'Geometria Espacial')";
   }
+
   $caminho = $location.$name;
   if(!empty($erro)){
-    enviarClass($classificação, $caminho);
+    enviarClass($classificação, $Id, $caminho);
   }
   else {
     foreach ($erro as $key) {
       echo $key;
     }
   }
+}
+else{
+  $_SESSION['erro'] = "Você não é um professor";
+  header('location: conteudo.php')
+}
 ?>

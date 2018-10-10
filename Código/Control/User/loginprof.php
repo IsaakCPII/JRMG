@@ -1,5 +1,16 @@
 <?php
   require_once("../../Table/criarconexaobd.php");
+
+  function BuscaID($emaill){
+    $bd = criaconexaobd();
+    $sql = $bd -> prepare (
+      "select id from usuario
+      where email = :valemail");
+      $sql -> bindValue(':valemail', $emaill);
+      $sql -> execute();
+      $resultado = $sql->fetch();
+      return $resultado['id'];
+  }
   function verificaEmail(string $emaillegal){
     $bd = criaconexaobd();
     $sql = $bd -> prepare (
@@ -9,7 +20,7 @@
       $sql -> execute();
       return $sql -> rowCount();
     }
-    function verificamatricula(string $matriculalegal){
+    function verificamatricula($matriculalegal){
       $bd = criaconexaobd();
       $sql = $bd -> prepare (
         "select matricula from professor
@@ -64,6 +75,8 @@
 	}
   else {
     session_start();
+    $id = BuscaID($email);
+    $_SESSION['idProfessorLogado'] = $id;
     $_SESSION['emailUsuarioLogado'] = $email;
     header('Location: ../../conteudo.php');
   }
