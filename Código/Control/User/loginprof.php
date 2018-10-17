@@ -20,12 +20,12 @@
       $sql -> execute();
       return $sql -> rowCount();
     }
-    function verificamatricula($matriculalegal){
+    function verificaid($var){
       $bd = criaconexaobd();
       $sql = $bd -> prepare (
-        "select matricula from professor
-        where matricula = :valmatricula");
-        $sql -> bindValue(':valmatricula', $matriculalegal);
+        "select id from professor
+        where id = :valid");
+        $sql -> bindValue(':valid', $var);
         $sql -> execute();
         return $sql -> rowCount();
       }
@@ -49,7 +49,6 @@
 	           );
 	$email = $request['email'];
 	$senha = $request['senha'];
-  $matricula = $request['matricula'];
 	if ($email == false)
 	{
 		$erro = "E-Mail não informado";
@@ -65,9 +64,14 @@
 	{
 		$erro = "Senha inválida";
 	}
-  if (verificamatricula($matricula)==0){
-    $erro = "Essa matricula não existe";
+  else
+  {
+    $id = BuscaID($email);
+    if (verificaid($id)==0){
+      $erro = "Você não é um professor";
+    }
   }
+
   if($erro != null){
 		session_start();
 		$_SESSION['erroLogin'] = $erro;
@@ -75,9 +79,8 @@
 	}
   else {
     session_start();
-    $id = BuscaID($email);
     $_SESSION['idProfessorLogado'] = $id;
-    $_SESSION['emailUsuarioLogado'] = $email;
+    $_SESSION['emailProfessorLogado'] = $email;
     header('Location: ../../conteudo.php');
   }
 ?>

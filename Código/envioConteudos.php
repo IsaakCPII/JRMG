@@ -1,3 +1,16 @@
+<?php
+	session_start();
+	$erro=null;
+	if(!empty($_SESSION['erro'])){
+		$erro = $_SESSION['erro'];
+	}
+	$emailP = $_SESSION['emailProfessorLogado'];
+	if(empty($_SESSION['emailUsuarioLogado'] == false)) {
+		header('Location: conteudo.php' );
+  }
+ 	if(empty($_SESSION['emailProfessorLogado'] == false)) {
+
+?>
 <!DOCTYPE HTML>
 <style media="screen">
   body, html {
@@ -64,3 +77,6 @@
       </div>
     </body>
 </html>
+<?php
+  }
+?>

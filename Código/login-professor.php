@@ -73,7 +73,6 @@
       <form action="Control/User/loginprof.php"  method="post">
         <label><b>LOGIN</b></label><br><br>
         <label>E-mail: </label><input type="email"  name="email" required  placeholder="Digite seu e-mail." class="a"><br>
-        <label>Matrícula: </label><input type="matricula"  name="matricula" required  placeholder="Digite sua matricula." class="a"><br>
         <label>Senha: </label><input type="password"  required  name="senha" placeholder="Digite sua senha." class="a"><br><br>
         <input type="submit" value="Entrar"><br>
       </form>

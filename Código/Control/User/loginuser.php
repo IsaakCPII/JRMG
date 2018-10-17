@@ -1,7 +1,24 @@
-
 <?php
 require_once("../../Table/criarconexaobd.php");
-
+function BuscaID($emaill){
+  $bd = criaconexaobd();
+  $sql = $bd -> prepare (
+    "select id from usuario
+    where email = :valemail");
+    $sql -> bindValue(':valemail', $emaill);
+    $sql -> execute();
+    $resultado = $sql->fetch();
+    return $resultado['id'];
+}
+function verificaid($var){
+  $bd = criaconexaobd();
+  $sql = $bd -> prepare (
+    "select id from professor
+    where id = :valid");
+    $sql -> bindValue(':valid', $var);
+    $sql -> execute();
+    return $sql -> rowCount();
+  }
 function verificaEmail(string $emaillegal){
   $bd = criaconexaobd();
   $sql = $bd -> prepare (
@@ -45,8 +62,11 @@ function verificaEmail(string $emaillegal){
     {
       $erro = "Senha inválida";
     }
-    // PENDENTE: Em caso de sucesso, redirecionar o usuário para a página de pedidos
-    // PENDENTE: Em caso de erro, redirecionar usuário para a página de login para exibir as mensagens de erro
+    $id = BuscaID($email);
+    if(verificaid($id)>0){
+      $erro = "Você é um professor, seu safado";
+    }
+
     if($erro != null){
       session_start();
       $_SESSION['erroLogin'] = $erro;

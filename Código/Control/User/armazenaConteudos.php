@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!empty($_SESSION['idProfessorLogado'];)){
+if(!empty($_SESSION['idProfessorLogado'])){
 require_once("../../Table/criarconexaobd.php");
 
 
@@ -59,6 +59,6 @@ require_once("../../Table/criarconexaobd.php");
 }
 else{
   $_SESSION['erro'] = "Você não é um professor";
-  header('location: conteudo.php')
+  header('location: conteudo.php');
 }
 ?>
