@@ -1,9 +1,21 @@
-<!DOCTYPE HTML>
+<?php
+	session_start();
+  if(empty($_SESSION['erroLogin']) == false)
+  {
+    $erros = $_SESSION['erroLogin'];
+    unset($_SESSION['erroLogin']);
+  }
+  else {
+    $erros = null;
+  }
 
+?>
+<!DOCTYPE HTML>
 <style media="screen">
   body, html {
     height: 100%;
   }
+
   body {
     height: 100%;
     background: #3846DC;
@@ -14,35 +26,74 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+	background-attachment: fixed;
+
   }
 
-  div{
+  .cadastrinho{
     background-color: white;
     border-radius: 10px;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     text-align: center;
-    margin-left: 600px;
-    margin-right: 600px;
-    margin-top: 200px;
+	font-size:20px;
+    width: 32%;
+	height: 32%;
+    top: 50%;
+    right: 34%;
+	margin-left: auto;
+    margin-right: auto;
+	display: block;
+
+
+
+  }
+  .a{
+    border: 0;
+    width: 62%;
+  }
+  .imgm{
+    height: 50%;
+    width: 50%;
+	margin-left: auto;
+    margin-right: auto;
+	display: block;
   }
 </style>
+<script>
+   function desbloqueia(){
+	 let checkbox = document.getElementById("1");
+     checkbox.disabled = ! checkbox.disabled;
+     checkbox.visibility = (checkbox.visibility == 'visible') ? 'hidden' : 'visible';
+   }
+</script>
 <html lang="pt-br">
     <head>
-          <title>Cadastro</title>
+      <title>Cadastro</title>
     <head>
-        <body>
-        <!--<h1>Crie sua conta</h1>-->
-        <div> <br><br>
-          <form action="falta colocaaaaaaaaaaaaaaaaaaaaaaaaaar" method="post">
+    <body>
+      <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
+        <img class="imgm"  src="b.png"/>
+      </div>
+      <div class="cadastrinho">
+        <?php if ($erros != null) { ?>
+          <div class="alert alert-warning">
+               <?php  foreach ($erros as $e) { ?>
+                  <script> alert ("<?= $e ?>"); </script>
+                <?php } ?>
 
-
+          </div>
+        <?php } ?>
+        <br>
+        <form action="Control/User/Cadastrauser.php"  method="post">
           <label><b>CADASTRO</b></label><br><br>
-          <label>Nome: </label><input type="name" style="border:0;" name="nome" required placeholder="Digite seu nome."><br>
-          <label>E-mail: </label><input type="email" style="border:0;" name="email" required placeholder="Digite seu e-mail."><br>
-          <label>Senha: </label><input type="password" style="border:0;" required name="senha"><br><br>
-          <input type="button" value="Enviar" name="botao"><br><br>
-
-          </form>
-        </div>
-        </body>
+          <label>Nome: </label><input type="name" name="nome" required minlength= "3" maxlength= "35" placeholder="Digite seu nome." class="a"><br>
+          <label>E-mail: </label><input type="email"  name="email" required  placeholder="Digite seu e-mail." class="a"><br>
+          <label>Senha: </label><input type="password"  required  name="senha" placeholder="Digite sua senha." class="a"><br>
+          Professor:<input type="checkbox" name="prof" onclick="desbloqueia()" value="Professor"> <BR/>
+          <label>Matricula: </label><input type="text"  name="matricula" id="1" placeholder="Digite sua matricula." disabled class="a"><br>
+          <input type="submit" value="Enviar"><br>
+        </form>
+      </div>
+	  <br><br>
+    </body>
 </html>
