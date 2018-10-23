@@ -75,6 +75,7 @@ function verificaEmail(string $emaillegal){
     else {
       session_start();
 		  $_SESSION['emailUsuarioLogado'] = $email;
+      $_SESSION['emailProfessorLogado'] = null;
       header('Location: ../../conteudo.php');
     }
     ?>

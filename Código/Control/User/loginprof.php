@@ -81,6 +81,7 @@
     session_start();
     $_SESSION['idProfessorLogado'] = $id;
     $_SESSION['emailProfessorLogado'] = $email;
+    $_SESSION['emailUsuarioLogado'] = null;
     header('Location: ../../conteudo.php');
   }
 ?>

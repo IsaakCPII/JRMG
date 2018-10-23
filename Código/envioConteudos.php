@@ -6,10 +6,11 @@
 	}
 	$emailP = $_SESSION['emailProfessorLogado'];
 	if(empty($_SESSION['emailUsuarioLogado'] == false)) {
-		header('Location: conteudo.php' );
+		header('Location: conteudo.php');
   }
- 	if(empty($_SESSION['emailProfessorLogado'] == false)) {
+ 	//if(empty($_SESSION['emailProfessorLogado'] == false)) {
 
+	//}
 ?>
 <!DOCTYPE HTML>
 <style media="screen">
@@ -71,12 +72,28 @@
         <form enctype="multipart/form-data" action="Control/User/armazenaConteudos.php"  method="post">
           <label><b>Envio de Novos arquivos</b></label><br><br>
           <label>classificação: </label><input type="text"  name="classificação" required  placeholder="Digite a classificação do conteúdo."><br>
-          <input type="file"  required  name="file" placeholder="Selecione o arquivo"><br><br>
+          <input type="file"  required  name="file" placeholder="Selecione o arquivo"><br>
+					<label>
+						<select name="visibilidadePublicações">
+							<option value="" selected disabled>Selecione</option>
+							<option value="1">Progressões</option>
+						  <option value="2">Polinômios</option>
+						  <option value="3">Trigonometria</option>
+					   	<option value="4">Probabilidade</option>
+						  <option value="5">Geometria plana</option>
+							<option value="6">Logaritmos</option>
+							<option value="7">Função quadrática</option>
+							<option value="8">Função afim</option>
+							<option value="9">Introdução às funções</option>
+							<option value="10">Números complexos</option>
+							<option value="11">Conjuntos</option>
+							<option value="12">Matemática básica</option>
+						</select>
+					</label><br/>
+					<br>
+
           <input type="submit" value="Enviar"><br>
         </form>
       </div>
     </body>
 </html>
-<?php
-  }
-?>

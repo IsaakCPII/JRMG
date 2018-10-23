@@ -1,3 +1,7 @@
+<?php
+  include('Control/User/mostraConteudo.php');
+  $value = $_REQUEST['value'];
+?>
 <!DOCTYPE HTML>
 <style media="screen">
   body, html {
@@ -24,6 +28,17 @@
       <title>Conteúdos</title>
     <head>
     <body>
-    
+      <?php
+        $b =  Mostra($tipo);
+        while($row = mysqli_fetch_array($b))
+        {
+        echo "<tr>";
+        echo "<td>" . $row['FirstName'] . "</td>";
+        echo "<td>" . $row['LastName'] . "</td>";
+        echo "</tr>";
+        }
+      ?>
+
+
     </body>
 </html>
