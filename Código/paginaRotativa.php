@@ -1,7 +1,3 @@
-<?php
-  include('Control/User/mostraConteudo.php');
-  $value = $_REQUEST['value'];
-?>
 <!DOCTYPE HTML>
 <style media="screen">
   body, html {
