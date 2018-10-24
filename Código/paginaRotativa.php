@@ -1,3 +1,7 @@
+<?php
+  require_once('Control/User/mostraConteudo.php');
+  $value = $_REQUEST['value'];
+?>
 <!DOCTYPE HTML>
 <style media="screen">
   body, html {
@@ -24,6 +28,17 @@
       <title>Conteúdos</title>
     <head>
     <body>
-    
+      <?php
+
+        $b =  Mostra($value);
+        foreach($b as $c){
+            echo "<tr>";
+            echo "<td>" . $c['classificacao'] . "</td><br>";
+            echo "<td>" . $c['arquivo'] . "</td><br>";
+            echo "</tr>";
+        }
+      ?>
+
+
     </body>
 </html>

@@ -1,25 +1,25 @@
 <?php
 session_start();
-if(!empty($_SESSION['idProfessorLogado'])){
+if($_SESSION['1'] == 1){
 require_once("../../Table/criarconexaobd.php");
 
 
   $Id = $_SESSION['idProfessorLogado'];
-
-  function enviarClass($class, $id, $Larq){
+  function enviarClass($class, $id, $Larq, $tipo){
     $bd = criaconexaobd();
     $sql = $bd -> prepare(
-      "INSERT INTO conteudos (classificacao, id_prof, arquivo)
-      Values (:valclass, :valid , :valLarq);");
+      "INSERT INTO conteudos (classificacao, id_prof, arquivo, tipo)
+      Values (:valclass, :valid , :valLarq, :valtipo);");
       $sql -> bindValue(':valclass', $class);
       $sql -> bindValue(':valid', $id);
       $sql -> bindValue(':valLarq', $Larq);
+      $sql -> bindValue(':valtipo', $tipo);
       $sql -> execute();
   }
 
   $foi=null;
   $erro[] = null;
-  $location = 'C:/Users/labcaxias/Documents/Turma 303/xampp/htdocs/Código/upload/';
+  $location = 'Código/upload/';
   if (isset($_FILES['file'])) {
       $name = $_FILES['file']['name'];
       $tmp_name = $_FILES['file']['tmp_name'];
@@ -39,17 +39,22 @@ require_once("../../Table/criarconexaobd.php");
   $_request = array_map('trim', $_REQUEST);
   $_request = filter_var_array(
     $_request,
-    [ 'classificação' => FILTER_DEFAULT, ]
+    [ 'classificação' => FILTER_DEFAULT, 'visibilidadePublicações' => FILTER_VALIDATE_INT ]
   );
   $classificação = $_request['classificação'];
+  $tipo = $_request['visibilidadePublicações'];
   if ($classificação == false)
   {
     $erro = "Digite a classificação do conteúdo! (ex. 'Geometria Espacial')";
   }
+  if($tipo == null){
+    $erro = "Selecione a matéria.";
+  }
 
   $caminho = $location.$name;
   if(!empty($erro)){
-    enviarClass($classificação, $Id, $caminho);
+    enviarClass($classificação, $Id, $caminho, $tipo);
+    header('location: ../../envioConteudos.php');
   }
   else {
     foreach ($erro as $key) {
