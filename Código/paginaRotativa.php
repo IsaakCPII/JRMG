@@ -29,6 +29,7 @@
     <head>
     <body>
       <?php
+<<<<<<< HEAD
 
         $b =  Mostra($value);
         foreach($b as $c){
@@ -36,6 +37,15 @@
             echo "<td>" . $c['classificacao'] . "</td><br>";
             echo "<td>" . $c['arquivo'] . "</td><br>";
             echo "</tr>";
+=======
+        $b =  Mostra($tipo);
+        while($row = mysqli_fetch_array($b))
+        {
+        echo "<tr>";
+        echo "<td>" . $row['FirstName'] . "</td>";
+        echo "<td>" . $row['LastName'] . "</td>";
+        echo "</tr>";
+>>>>>>> b2276ae0987812ac7919108a33afb64d43862741
         }
       ?>
 
