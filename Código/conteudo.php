@@ -5,11 +5,12 @@
 	if(!empty($_SESSION['erro'])){
 		$erro = $_SESSION['erro'];
 	}
+  $email = $_SESSION['emailUsuarioLogado'];
+	if (empty($_SESSION['emailUsuarioLogado']) == true && empty($_SESSION['emailProfessorLogado']) == true) {
+    $_SESSION['erroLogin'] = "Você ainda não está logado.";
+		header('Location: selec-login.php' );
+	 }
 
-	if (empty($_SESSION['emailUsuarioLogado']) == true) {
-      $_SESSION['erroLogin'] = "Você ainda não está logado.";
-  		header('Location: selec-login.php');
-	}
 ?>
 <!DOCTYPE html>
 <style media="screen">

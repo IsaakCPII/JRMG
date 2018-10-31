@@ -1,18 +1,5 @@
-<?php
-	session_start();
-  if(empty($_SESSION['erroLogin']) == false)
-	{
-		$erro = $_SESSION['erroLogin'];
-		unset($_SESSION['erroLogin']);
-	}
-	else {
-		$erro = null;
-	}
-	if (empty($_SESSION['emailUsuarioLogado']) == false) {
-		header('Location: conteudo.php');
-	}
-?>
 <!DOCTYPE HTML lang="pt-br">
+
 <style>
   body, html {
     height: 100%;
@@ -43,6 +30,9 @@
     margin-right: auto;
     display: block;
   }
+	.erro{
+		height: 10%;
+	}
   .a{
     border: 0;
     width: 62%;
@@ -61,20 +51,20 @@
     <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
       <img class="imgm"  src="b.png"/>
     </div>
-    <div class="cadastrinho">
-      <?php if ($erro != null) { ?>
-        <div class="alert alert-warning">
-					<ul>
-						<script> alert("<?= $erro ?>"); </script>
-					</ul>
-				</div>
-      <?php } ?>
-      <br>
-      <form action="Control/User/loginprof.php"  method="post">
-        <label><b>LOGIN</b></label><br><br>
-        <label>E-mail: </label><input type="email"  name="email" required  placeholder="Digite seu e-mail." class="a"><br>
-        <label>Senha: </label><input type="password"  required  name="senha" placeholder="Digite sua senha." class="a"><br><br>
-        <input type="submit" value="Entrar"><br>
+    <div class="cadastrinho"> <br>
+
+
+        <div class="erro">
+
+        </div>
+
+
+      <form action="Control/User/cadastraMatricula.php"  method="post">
+        <label><b>Cadastrar professor</b></label><br><br>
+        <label> Nome: </label><input type="text"  name="nome" required  placeholder="Digite o nome" class="a"><br>
+        <label> Matrícula: </label><input type="text"  name="matricula" required  placeholder="Digite a matrícula" class="a"><br><br>
+
+        <input type="submit" value="Cadastrar"><br>
       </form>
     </div>
     <br><br>

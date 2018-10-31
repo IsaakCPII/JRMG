@@ -80,8 +80,8 @@
   else {
     session_start();
     $_SESSION['idProfessorLogado'] = $id;
-    $_SESSION['emailUsuarioLogado'] = $email;
-    $_SESSION['verificador'] = "1";
+    $_SESSION['emailProfessorLogado'] = $email;
+    $_SESSION['emailUsuarioLogado'] = null;
     header('Location: ../../conteudo.php');
   }
 ?>

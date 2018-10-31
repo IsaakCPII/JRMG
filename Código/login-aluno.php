@@ -14,6 +14,7 @@
 	if (empty($_SESSION['emailUsuarioLogado']) == false) {
 		header('Location: conteudo.php');
 	}
+
 ?>
 
 <!DOCTYPE HTML lang="pt-br">

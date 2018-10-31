@@ -4,12 +4,8 @@
 	if(!empty($_SESSION['erro'])){
 		$erro = $_SESSION['erro'];
 	}
-<<<<<<< HEAD
-	if(empty($_SESSION['verificador'] == "1")) {
-=======
 	$emailP = $_SESSION['emailProfessorLogado'];
 	if(empty($_SESSION['emailUsuarioLogado'] == false)) {
->>>>>>> b2276ae0987812ac7919108a33afb64d43862741
 		header('Location: conteudo.php');
   }
  	//if(empty($_SESSION['emailProfessorLogado'] == false)) {
@@ -76,11 +72,7 @@
         <form enctype="multipart/form-data" action="Control/User/armazenaConteudos.php"  method="post">
           <label><b>Envio de Novos arquivos</b></label><br><br>
           <label>classificação: </label><input type="text"  name="classificação" required  placeholder="Digite a classificação do conteúdo."><br>
-<<<<<<< HEAD
-          <input type="file"  required  name="file" placeholder="Selecione o arquivo" accept="application/pdf"><br>
-=======
           <input type="file"  required  name="file" placeholder="Selecione o arquivo"><br>
->>>>>>> b2276ae0987812ac7919108a33afb64d43862741
 					<label>
 						<select name="visibilidadePublicações">
 							<option value="" selected disabled>Selecione</option>

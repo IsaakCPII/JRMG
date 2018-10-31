@@ -1,6 +1,6 @@
 <?php
 session_start();
-if($_SESSION['1'] == 1){
+if(!empty($_SESSION['idProfessorLogado'])){
 require_once("../../Table/criarconexaobd.php");
 
 
@@ -19,7 +19,7 @@ require_once("../../Table/criarconexaobd.php");
 
   $foi=null;
   $erro[] = null;
-  $location = 'Código/upload/';
+  $location = 'C:/Users/labcaxias/Documents/Turma 303/xampp/htdocs/Código/upload/';
   if (isset($_FILES['file'])) {
       $name = $_FILES['file']['name'];
       $tmp_name = $_FILES['file']['tmp_name'];
