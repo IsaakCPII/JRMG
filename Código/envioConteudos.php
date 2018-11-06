@@ -4,20 +4,14 @@
 	if(!empty($_SESSION['erro'])){
 		$erro = $_SESSION['erro'];
 	}
-	$emailP = $_SESSION['emailProfessorLogado'];
-	if(empty($_SESSION['emailUsuarioLogado'] == false)) {
-		header('Location: conteudo.php');
-  }
- 	//if(empty($_SESSION['emailProfessorLogado'] == false)) {
-
-	//}
+	if($_SESSION['verificador'] == "1") {
+		$email = $_SESSION['emailProfessorLogado'];
 ?>
 <!DOCTYPE HTML>
 <style media="screen">
   body, html {
     height: 100%;
   }
-
   body {
     height: 100%;
     background: #3846DC;
@@ -58,7 +52,6 @@
     display: block;
   }
 </style>
-
 <html lang="pt-br">
     <head>
       <title>Envio de Conteúdos</title>
@@ -68,7 +61,6 @@
         <img class="imgm"  src="b.png"/>
       </div>
       <div class="formulariozim"> <br>
-
         <form enctype="multipart/form-data" action="Control/User/armazenaConteudos.php"  method="post">
           <label><b>Envio de Novos arquivos</b></label><br><br>
           <label>classificação: </label><input type="text"  name="classificação" required  placeholder="Digite a classificação do conteúdo."><br>
@@ -91,9 +83,12 @@
 						</select>
 					</label><br/>
 					<br>
-
           <input type="submit" value="Enviar"><br>
         </form>
       </div>
     </body>
 </html>
+<?php }
+else{
+	header("location: conteudo.php");
+}?>

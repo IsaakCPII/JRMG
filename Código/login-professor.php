@@ -8,7 +8,7 @@
 	else {
 		$erro = null;
 	}
-	if (empty($_SESSION['emailUsuarioLogado']) == false) {
+	if (empty($_SESSION['emailUsuarioLogado']) == false){
 		header('Location: conteudo.php');
 	}
 ?>

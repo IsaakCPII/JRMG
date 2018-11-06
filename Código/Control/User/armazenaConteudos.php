@@ -1,9 +1,6 @@
 <?php
 session_start();
-if(!empty($_SESSION['idProfessorLogado'])){
 require_once("../../Table/criarconexaobd.php");
-
-
   $Id = $_SESSION['idProfessorLogado'];
   function enviarClass($class, $id, $Larq, $tipo){
     $bd = criaconexaobd();
@@ -19,7 +16,7 @@ require_once("../../Table/criarconexaobd.php");
 
   $foi=null;
   $erro[] = null;
-  $location = 'C:/Users/labcaxias/Documents/Turma 303/xampp/htdocs/Código/upload/';
+  $location = 'Código/upload/';
   if (isset($_FILES['file'])) {
       $name = $_FILES['file']['name'];
       $tmp_name = $_FILES['file']['tmp_name'];
@@ -61,9 +58,5 @@ require_once("../../Table/criarconexaobd.php");
       echo $key;
     }
   }
-}
-else{
-  $_SESSION['erro'] = "Você não é um professor";
-  header('location: conteudo.php');
-}
+
 ?>

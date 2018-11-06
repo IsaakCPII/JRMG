@@ -2,24 +2,18 @@
   require_once("../../Table/criarconexaobd.php");
 
 
-  function verifica($mat){
-    $bd= criaconexaobd();
 
-    $sql = $bd -> prepare(
-      "select matricula from matricula where matricula = :mat");
-      $sql -> bindValue(':mat', $mat);
-      $sql->execute();
-      return $sql -> rowCount();
-  }
   function inserematricula($mat){
     $bd = criaconexaobd();
     $sql = $bd -> prepare(
-      "INSERT INTO matricula (nome, matricula)
-    	Values (:valnome, :valmatricula);");
-      $sql -> bindValue(':valnome', $mat['nome']);
+      "INSERT INTO professor (matricula, nome)
+    	Values (:valmatricula, :valnome);");
       $sql -> bindValue(':valmatricula', $mat['matricula']);
+      $sql -> bindValue(':valnome', $mat['nome']);
       $sql -> execute();
-    }
+
+
+        }
 
 
         $erro = null;
@@ -39,19 +33,14 @@
         {
           $erro = "Matrícula não informada";
         }
-        if(verifica($matricula) > 0)
-        {
-          $erro = "matricula já existe";
-          header('Location: ../../paginaAdministrador.php');
-        }
 
         if($erro != null){
-          session_start();
-          $_SESSION['erro'] = $erro;
           header('Location: ../../paginaAdministrador.php');
         }
         else {
           inserematricula($_request);
+
+
         }
 
 
