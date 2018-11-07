@@ -5,7 +5,7 @@
 		$erro = $_SESSION['erro'];
 	}
 	if($_SESSION['verificador'] == "1") {
-		$email = $_SESSION['emailProfessorLogado'];
+
 ?>
 <!DOCTYPE HTML>
 <style media="screen">
@@ -64,7 +64,7 @@
         <form enctype="multipart/form-data" action="Control/User/armazenaConteudos.php"  method="post">
           <label><b>Envio de Novos arquivos</b></label><br><br>
           <label>classificação: </label><input type="text"  name="classificação" required  placeholder="Digite a classificação do conteúdo."><br>
-          <input type="file"  required  name="file" placeholder="Selecione o arquivo"><br>
+          <input type="file"  required  name="file" placeholder="Selecione o arquivo" accept="application/pdf"><br>
 					<label>
 						<select name="visibilidadePublicações">
 							<option value="" selected disabled>Selecione</option>

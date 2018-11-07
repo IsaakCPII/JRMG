@@ -2,8 +2,10 @@
 	session_start();
 
 	$erro=null;
-	if(empty($_SESSION['erro'] == true)){
-		$erro = $_SESSION['	erro'];
+	if(empty($_SESSION['erro']) == false)
+	{
+		$erro = $_SESSION['erro'];
+		unset($_SESSION['erro']);
 	}
 
 	if (empty($_SESSION['emailUsuarioLogado']) == true) {

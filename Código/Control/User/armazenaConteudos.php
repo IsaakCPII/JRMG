@@ -14,25 +14,7 @@ require_once("../../Table/criarconexaobd.php");
       $sql -> execute();
   }
 
-  $foi=null;
   $erro[] = null;
-  $location = 'Código/upload/';
-  if (isset($_FILES['file'])) {
-      $name = $_FILES['file']['name'];
-      $tmp_name = $_FILES['file']['tmp_name'];
-
-      $error = $_FILES['file']['error'];
-      if ($error !== UPLOAD_ERR_OK) {
-          $erro = 'Erro ao fazer o upload: ' . $error ;
-      }
-      elseif (move_uploaded_file($tmp_name, $location . $name)) {
-          $foi = 'Uploaded';
-      }
-    }
-    else {
-    $erro =  'Selecione um arquivo para fazer upload';
-    }
-
   $_request = array_map('trim', $_REQUEST);
   $_request = filter_var_array(
     $_request,
@@ -48,15 +30,41 @@ require_once("../../Table/criarconexaobd.php");
     $erro = "Selecione a matéria.";
   }
 
-  $caminho = $location.$name;
-  if(!empty($erro)){
-    enviarClass($classificação, $Id, $caminho, $tipo);
-    header('location: ../../envioConteudos.php');
-  }
+  $arq = $_FILES['file'];
+
+
+			$pasta = "carregamentos/$Id";
+
+			mkdir("../../$pasta");
+
+
+			$nomeOrig = $arq['name'];
+			$nomeFinal = "$tipo - $nomeOrig";
+
+			$caminhoCompleto = "$pasta/$nomeFinal";
+
+			if($arq['error'] != UPLOAD_ERR_OK)
+
+			{
+					$erro = "Erro ao carregar arquivo";
+			}
+      else{
+  	       enviarClass($classificação, $Id, $caminhoCompleto, $tipo);
+  	        $_SESSION['erroCarregamento'] = $erro;
+            header("location: ../../conteudo.php");
+      }
+			if (move_uploaded_file($arq['tmp_name'], "../../$caminhoCompleto") == false ){
+				$erro = "Erro ao salvar arquivo no servidor";
+			}
+
+
+
+  /*$caminho = $location.$name;
+
   else {
     foreach ($erro as $key) {
       echo $key;
     }
-  }
+  }*/
 
 ?>
