@@ -24,14 +24,13 @@
   }
   a{
     color: black;
+    font-style:oblique;
   }
-</style>
+  p{
+    color: black;
+    font-style:oblique;
+  }
 
-<!DOCTYPE HTML>
-<style media="screen">
-  body, html {
-    height: 100%;
-  }
   .cadastrinho{
     background-color: white;
     border-radius: 10px;
@@ -73,27 +72,22 @@
       <title>Conteúdos</title>
     <head>
     <body>
-      <?php
-        require_once("Control/User/mostraConteudo.php");
-        $value = $_REQUEST['value'];
-        $b =  Mostra($value);
-          foreach($b as $a){
-            if (array_key_exists('arquivo', $a) == true) {
-      ?>
-
-
       <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
         <img class="imgm"  src="b.png"/>
       </div>
-        <div class="cadastrinho"> <br>
-          Arquivo: <?= $a['classificacao'] ?> <a href="<?= $a['arquivo']?>"> Baixar <a/><br>
+      <div class="cadastrinho">
+        <?php
+          require_once("Control/User/mostraConteudo.php");
+          $value = $_REQUEST['value'];
+          $b =  Mostra($value);
+          foreach($b as $a){
+            if (array_key_exists('arquivo', $a) == true) {
+        ?>
+          <strong>Arquivo: <?= $a['classificacao'] ?> <a href="<?= $a['arquivo']?>"> Baixar <a/> <a href="Control/User/apaga.php?arq=<?= $a['arquivo'] ?>">Deletar</a></strong><br>
           <?php
+            }
           }
-          else {
-            echo "aaaaa";
-          }
-        }
-      ?>
-      </div>
+            ?>
+      </div><br>
     </body>
 </html>

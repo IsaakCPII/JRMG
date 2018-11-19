@@ -63,7 +63,7 @@
 
         </div>
       <?php } ?>
-			<?php if (empty($_SESSION['emailUsuarioLogado']) == true) { ?>
+			<?php if (empty($_SESSION['verificador']) == false	) { ?>
 				<a href="envioConteudos.php">Enviar novos conteúdos</a>
 			<?php }?>
 			<a href="Control/User/sair.php">Sair</a>
