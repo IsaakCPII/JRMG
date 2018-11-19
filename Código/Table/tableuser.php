@@ -1,5 +1,47 @@
 <?php
   require_once("criarconexaobd.php");
+  function mataTodoMundoNessaMerda($id){
+    $bd = criaconexaobd();
+  	$sql = $bd -> prepare (
+  	"delete matricula from professor
+  	where id = :valid
+  	"
+  	);
+    $sql = $bd -> prepare (
+  	"delete id, nome, senha, email from usuario
+  	where id = :valide
+  	"
+  	);
+
+    $sql -> bindValue(':valid', $id);
+    $sql -> bindValue(':valide', $id);
+    $sql -> execute();
+  }
+  function verificador($mat){
+    $bd = criaconexaobd();
+  	$sql = $bd -> prepare (
+  	"select matricula from matricula
+  	where matricula = :valmat
+  	"
+  	);
+    $sql -> bindValue(':valmat', $mat);
+    $sql -> execute();
+    return $sql -> rowCount();
+  }
+
+  function verifica_a_dor($mat){
+    $bd = criaconexaobd();
+  	$sql = $bd -> prepare (
+  	"select matricula from professor
+  	where matricula = :valmat
+  	"
+  	);
+
+
+    $sql -> bindValue(':valmat', $mat);
+    $sql -> execute();
+    return $sql -> rowCount();
+  }
 
   function insereuser($dadosuser){
     $bd = criaconexaobd();
@@ -34,8 +76,6 @@
   	where email = :valemail
   	"
   	);
-
-
     $sql -> bindValue(':valemail', $emailigual);
     $sql -> execute();
     return $sql -> rowCount();

@@ -1,14 +1,5 @@
 <?php
-require_once("../../Table/tableuser.php");
     $erros = [];
-    $matriculas_cadastradas= [
-      'Alexandre' => 'A00001DC',
-      'João' => 'A00002DC',
-      'Anderson' => 'A00003DC',
-      'Braulino' => 'A00004DC',
-      'Geovane' => 'A00005DC',
-      'Leandro' => 'A00006DC'
-    ];
     $request = array_map('trim', $_REQUEST);
 
     $request = filter_var_array(
@@ -39,24 +30,16 @@ require_once("../../Table/tableuser.php");
     elseif (strlen($senha) < 6 || strlen($senha) > 12 ) {
       	$erros[] = "A quantidade de caracteres da senha deve estar entre 6 e 12";
     }
-    $cont = 0;
+
     $matricula = $request['matricula'];
-    foreach ($matriculas_cadastradas as $mc) {
-      if ($matricula == $mc){
-        $cont = 1;
+    if (empty($matricula)==false){
+      if(verificador($matricula)==0){
+        $erros[]="Esta Matrícula não existe.";
+      }
+      if(verifica_a_dor($matricula)==0){
+        $erros[]="Usuário já cadastrado com essa matrícula.";
       }
     }
-    if (!empty($matricula)){
-    if($cont > 0)
-    {
-      if( buscamatricula($request['matricula'])>0 ){
-        $erros[]="Matrícula já cadastrada.";
-      }
-    }
-    else{
-      $erros[]="Esta Matrícula não existe.";
-    }
-  }
     if(buscausuario($request['email'])>0){
         $erros[] = "Email já existe" ;
     }

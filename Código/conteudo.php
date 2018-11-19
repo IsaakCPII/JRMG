@@ -63,8 +63,10 @@
 
         </div>
       <?php } ?>
-			<a href="envioConteudos.php">Enviar novos conteúdos</a>
-      <a href="Control/User/sair.php">Sair</a>
+			<?php if (empty($_SESSION['emailUsuarioLogado']) == true) { ?>
+				<a href="envioConteudos.php">Enviar novos conteúdos</a>
+			<?php }?>
+			<a href="Control/User/sair.php">Sair</a>
     </div>
     <div class="conteudinhos">
       <a href="paginaRotativa.php?value=1"><img class="imagenzinhas" src="o.png"></a>
