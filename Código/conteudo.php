@@ -63,24 +63,24 @@
 
         </div>
       <?php } ?>
-			<?php if (empty($_SESSION['verificador']) == false	) { ?>
+			<?php if (empty($_SESSION['emailUsuarioLogado']) == true	) { ?>
 				<a href="envioConteudos.php">Enviar novos conteúdos</a>
 			<?php }?>
 			<a href="Control/User/sair.php">Sair</a>
     </div>
     <div class="conteudinhos">
-      <a href="paginaRotativa.php?value=1"><img class="imagenzinhas" src="o.png"></a>
-      <a href="paginaRotativa.php?value=2"><img class="imagenzinhas" src="p.png"></a>
-      <a href="paginaRotativa.php?value=3"><img class="imagenzinhas" src="q.png"></a>
-      <a href="paginaRotativa.php?value=4"><img class="imagenzinhas" src="r.png"></a>
-      <a href="paginaRotativa.php?value=5"><img class="imagenzinhas" src="s.png"></a>
-      <a href="paginaRotativa.php?value=6"><img class="imagenzinhas" src="t.png"></a>
-      <a href="paginaRotativa.php?value=7"><img class="imagenzinhas" src="u.png"></a>
-      <a href="paginaRotativa.php?value=8"><img class="imagenzinhas" src="v.png"></a>
-      <a href="paginaRotativa.php?value=9"><img class="imagenzinhas" src="w.png"></a>
-      <a href="paginaRotativa.php?value=10"><img class="imagenzinhas" src="x.png"></a>
-      <a href="paginaRotativa.php?value=11"><img class="imagenzinhas" src="y.png"></a>
-      <a href="paginaRotativa.php?value=12"><img class="imagenzinhas" src="z.png"></a>
+      <a href="paginaRotativa.php?value=1"><img class="imagenzinhas" src="../imagens/o.png"></a>
+      <a href="paginaRotativa.php?value=2"><img class="imagenzinhas" src="../imagens/p.png"></a>
+      <a href="paginaRotativa.php?value=3"><img class="imagenzinhas" src="../imagens/q.png"></a>
+      <a href="paginaRotativa.php?value=4"><img class="imagenzinhas" src="../imagens/r.png"></a>
+      <a href="paginaRotativa.php?value=5"><img class="imagenzinhas" src="../imagens/s.png"></a>
+      <a href="paginaRotativa.php?value=6"><img class="imagenzinhas" src="../imagens/t.png"></a>
+      <a href="paginaRotativa.php?value=7"><img class="imagenzinhas" src="../imagens/u.png"></a>
+      <a href="paginaRotativa.php?value=8"><img class="imagenzinhas" src="../imagens/v.png"></a>
+      <a href="paginaRotativa.php?value=9"><img class="imagenzinhas" src="../imagens/w.png"></a>
+      <a href="paginaRotativa.php?value=10"><img class="imagenzinhas" src="../imagens/x.png"></a>
+      <a href="paginaRotativa.php?value=11"><img class="imagenzinhas" src="../imagens/y.png"></a>
+      <a href="paginaRotativa.php?value=12"><img class="imagenzinhas" src="../imagens/z.png"></a>
     </div>
   </body>
 </html>

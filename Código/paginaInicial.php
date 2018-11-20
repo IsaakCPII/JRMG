@@ -46,7 +46,7 @@
       <a href="cadastro.php"> Cadastro </a>
     </div>
     <div class="div_sup" style="transform: translateY(0px); opacity: 1;">
-      <img class="imgm"  src="b.png"/>
+      <img class="imgm"  src="../imagens/b.png"/>
     </div>
 
   </body>
