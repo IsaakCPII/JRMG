@@ -8,11 +8,11 @@
 - [CDU 04 - Inserção de comentários](#cdu-04---Inserção-de-comentários)
 - [CDU 05 - Gerenciar conteúdos](#cdu-05---Gerenciar-conteúdos)
 - [CDU 06 - Baixar arquivos](#cdu-06---Baixar-arquivos)
-- [CDU 07 - Marcação de conteúdos](#cdu-08---Marcação-de-conteúdos)
-- [CDU 08 - Fixar comentários](#cdu-11---Fixar-comentários)
-- [CDU 09 - Gerenciar professores](#cdu-07---Gerenciar-professores)
-- [CDU 10 - Visualizar conteúdos](#cdu-09---Visualizar-conteúdos)
-- [CDU 11 - Gerenciar alunos](#cdu-010---Gerenciar-alunos)
+- [CDU 07 - Marcação de conteúdos](#cdu-07---Marcação-de-conteúdos)
+- [CDU 08 - Fixar comentários](#cdu-08---Fixar-comentários)
+- [CDU 09 - Gerenciar professores](#cdu-09---Gerenciar-professores)
+- [CDU 10 - Visualizar conteúdos](#cdu-10---Visualizar-conteúdos)
+- [CDU 11 - Gerenciar alunos](#cdu-11---Gerenciar-alunos)
 
 
 
