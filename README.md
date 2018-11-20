@@ -1,4 +1,4 @@
-# O projeto Final
+# Projeto Final do Curso Técnico em Informática do Colégio Pedro II – Campus Duque de Caxias – 2018
 ## Site de Matemática
 
 ## Trabalho de Conclusão de Curso.
