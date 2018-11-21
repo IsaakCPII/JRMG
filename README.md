@@ -10,9 +10,9 @@
 
 ### SUMUMÁRIO
 
-- [Proposta]()
-- [Casos de uso]()
-- [Modelagem]()
-- [Manual]()
+* [Proposta]()
+* [Casos de uso]()
+* [Modelagem]()
+* [Manual]()
 
 
