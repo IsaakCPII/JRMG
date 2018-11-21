@@ -1,7 +1,4 @@
-# Projeto Final do Curso Técnico em Informática do Colégio Pedro II – Campus Duque de Caxias – 2018
-## Site de Matemática
-
-## Trabalho de Conclusão de Curso.
+# Proposta
 
 ### VISÃO GERAL
 O projeto consiste em desenvolver um site de matemática que auxilie no aprendizado dos alunos, oferecendo-lhes listas corrigidas e/ou não corrigidas, conteúdos e histórias sobre ela. Além disso ainda possuirá um espaço para os alunos sanarem suas dúvidas.
@@ -22,3 +19,10 @@ O projeto consiste em desenvolver um site de matemática que auxilie no aprendiz
 4. Os professores poderão responder as perguntas feitas pelos utilizadores normais.
 
 5. O site possuirá uma seção de comentários sobre o site (para sugestões e/ou reclamações).
+
+## Stakeholders
+* Alexandre Machado Souto
+
+## Requisitos
+
+- [Requisitos](https://github.com/cp2-dc-info-projeto-final-2018/JRMG/blob/master/Requisitos.md)
