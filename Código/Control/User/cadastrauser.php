@@ -1,4 +1,5 @@
 <?php
+    require_once("../../Table/tableuser.php");
     $erros = [];
     $request = array_map('trim', $_REQUEST);
 
@@ -17,8 +18,8 @@
         $erros[] = "O nome informado não é valido";// code...
     }
     elseif (strlen ($nome) < 3 || strlen($nome) > 35) {
-      $erros [] =  "A quantidade de caracteres do nome deve estar entre 3 e 35";
       // code...
+      $erros [] =  "OS caracteres devem estar entre 3 e 35";
     }
 
     $senha = $request['senha'];
@@ -28,20 +29,20 @@
     }
 
     elseif (strlen($senha) < 6 || strlen($senha) > 12 ) {
-      	$erros[] = "A quantidade de caracteres da senha deve estar entre 6 e 12";
+      	$erros[] = "OS caracteres da senha devem estar entre 6 e 12";
     }
 
     $matricula = $request['matricula'];
     if (empty($matricula)==false){
       if(verificador($matricula)==0){
-        $erros[]="Esta Matrícula não existe.";
+        $erros[]="Matrícula inexistente.";
       }
-      if(verifica_a_dor($matricula)==0){
-        $erros[]="Usuário já cadastrado com essa matrícula.";
+      if(verifica_a_dor($matricula)>0){
+        $erros[]="Matrícula já cadastrada.";
       }
     }
     if(buscausuario($request['email'])>0){
-        $erros[] = "Email já existe" ;
+        $erros[] = "Email existente." ;
     }
 
     if($erros != null){

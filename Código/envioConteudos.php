@@ -58,7 +58,7 @@
     <head>
     <body>
       <div class="div_sup" style="transform: translateY(0px); opacity: 1;">
-        <img class="imgm"  src="../imagens/b.png"/>
+        <a href="conteudo.php"><img class="imgm"  src="../imagens/b.png"/></a>
       </div>
       <div class="formulariozim"> <br>
         <form enctype="multipart/form-data" action="Control/User/armazenaConteudos.php"  method="post">

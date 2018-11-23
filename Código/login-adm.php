@@ -47,9 +47,6 @@
     border: 0;
     width: 62%;
   }
-	.ca{
-		font-size: 12px;
-	}
   .imgm{
     height: 50%;
     width: 50%;
@@ -58,7 +55,7 @@
     display: block;
   }
 </style>
-<head> <title>Login</title> </head>
+<head> <title>Login-Adm</title> </head>
 <HTML>
   <body>
     <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
@@ -73,13 +70,12 @@
 				</div>
       <?php } ?>
       <br>
-      <form action="Control/User/loginprof.php"  method="post">
-        <label><b>LOGIN</b></label><br><br>
-        <label>E-mail: </label><input type="email"  name="email" required  placeholder="Digite seu e-mail." class="a"><br>
+      <form action="Control/User/loginadm.php"  method="post">
+        <label><b>LOGIN - ADM</b></label><br><br>
+        <label>E-mail: </label><input type="text"  name="usuario" required  placeholder="Digite seu e-mail." class="a"><br>
         <label>Senha: </label><input type="password"  required  name="senha" placeholder="Digite sua senha." class="a"><br><br>
         <input type="submit" value="Entrar"><br>
       </form>
-			<a class="ca" href="login-adm.php">Login-ADM</a>
     </div>
     <br><br>
   </body>

@@ -58,7 +58,7 @@
 		$erro = "Senha não informada";
 	}
 	else if (verificaEmail($email)==0){
-		$erro = "Nenhum usuário cadastrado com o email informado";
+		$erro = "Email não cadastrado";
 	}
 	else if (password_verify($senha, buscasenha($email))==false)
 	{

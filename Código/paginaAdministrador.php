@@ -1,5 +1,15 @@
 <!DOCTYPE HTML lang="pt-br">
-
+<?php
+  if(empty($_SESSION['erroLogin']) == false)
+  {
+    session_start();
+    $erro = $_SESSION['erroLogin'];
+    unset($_SESSION['erroLogin']);
+  }
+  else {
+    $erro = null;
+  }
+?>
 <style>
   body, html {
     height: 100%;
@@ -49,23 +59,27 @@
 <HTML>
   <body>
     <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
-      <img class="imgm"  src="../imagens/b.png"/>
+      <a href="conteudo.php"><img class="imgm"  src="../imagens/b.png"/></a>
     </div>
     <div class="cadastrinho"> <br>
 
 
         <div class="erro">
-
+          <?php if ($erro != null) { ?>
+              <p> Erro: <?= $erro ?> </p>
+          <?php } ?>
         </div>
 
 
       <form action="Control/User/cadastraMatricula.php"  method="post">
         <label><b>Cadastrar professor</b></label><br><br>
-        <label> Nome: </label><input type="text"  name="nome" required  placeholder="Digite o nome" class="a"><br>
-        <label> Matrícula: </label><input type="text"  name="matricula" required  placeholder="Digite a matrícula" class="a"><br><br>
-
+        <label> Matrícula: </label><input type="text"  name="matricula" required  placeholder="Digite a matrícula" class="a">
         <input type="submit" value="Cadastrar"><br>
       </form>
+      <form action="../Código/Control/User/apagamatricula.php"  method="post">
+        <p> Excluir <input type="text" name="mat" placeholder ="digite a matricula que deseja excluir"/> <input type="submit" value="Excluir"></input></p>
+      </form>
+
     </div>
     <br><br>
   </body>

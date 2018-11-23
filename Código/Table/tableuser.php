@@ -20,7 +20,7 @@
   function verificador($mat){
     $bd = criaconexaobd();
   	$sql = $bd -> prepare (
-  	"select matricula from matricula
+  	"SELECT matricula from matricula
   	where matricula = :valmat
   	"
   	);
@@ -28,16 +28,11 @@
     $sql -> execute();
     return $sql -> rowCount();
   }
-
   function verifica_a_dor($mat){
     $bd = criaconexaobd();
   	$sql = $bd -> prepare (
-  	"select matricula from professor
-  	where matricula = :valmat
-  	"
-  	);
-
-
+  	"SELECT matricula from professor
+  	where matricula = :valmat");
     $sql -> bindValue(':valmat', $mat);
     $sql -> execute();
     return $sql -> rowCount();

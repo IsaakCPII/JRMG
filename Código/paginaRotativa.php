@@ -32,6 +32,7 @@
   }
 
   .cadastrinho{
+    padding: 1%;
     background-color: white;
     border-radius: 10px;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
@@ -73,7 +74,7 @@
     <head>
     <body>
       <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
-        <img class="imgm"  src="../imagens/b.png"/>
+        <a href="conteudo.php"><img class="imgm"  src="../imagens/b.png"/></a>
       </div>
       <div class="cadastrinho">
         <?php
@@ -86,6 +87,10 @@
           <strong>Arquivo: <?= $a['classificacao'] ?> <a href="<?= $a['arquivo']?>"> Baixar <a/> <a href="Control/User/apaga.php?arq=<?= $a['arquivo'] ?>">Deletar</a></strong><br>
           <?php
             }
+            else {
+              ?>
+               <p><strong> Nenhum arquivo enviado </strong></p>
+            <?php }
           }
             ?>
       </div><br>

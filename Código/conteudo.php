@@ -34,9 +34,8 @@
 		background-color: white;
 		margin-left: auto;
 		margin-right: auto;
-		float: center;
 		margin-top: 1%;
-		width: 69.9%;
+		width: 57.9%;
 		padding: 0.25%;
 	}
 	.sup_estatica{
@@ -44,6 +43,8 @@
 	}
 	a{
 		color:white;
+	}
+	.imagenzinhas{
 	}
 </style>
 <html>
@@ -63,8 +64,11 @@
 
         </div>
       <?php } ?>
-			<?php if (empty($_SESSION['emailUsuarioLogado']) == true	) { ?>
+			<?php if (!empty($_SESSION['verificador'])) { ?>
 				<a href="envioConteudos.php">Enviar novos conteúdos</a>
+			<?php }?>
+			<?php if (!empty($_SESSION['adm'])) { ?>
+				<a href="../../JRMG/Código/Control/User/cadastraMatricula.php">gerenciar professores</a>
 			<?php }?>
 			<a href="Control/User/sair.php">Sair</a>
     </div>

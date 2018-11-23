@@ -13,7 +13,6 @@ require_once("../../Table/criarconexaobd.php");
       $sql -> bindValue(':valtipo', $tipo);
       $sql -> execute();
   }
-
   $erro[] = null;
   $_request = array_map('trim', $_REQUEST);
   $_request = filter_var_array(

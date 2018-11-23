@@ -2,11 +2,11 @@
 	session_start();
   if(empty($_SESSION['erroLogin']) == false)
   {
-    $erros = $_SESSION['erroLogin'];
+    $erro = $_SESSION['erroLogin'];
     unset($_SESSION['erroLogin']);
   }
   else {
-    $erros = null;
+    $erro = null;
   }
 
 ?>
@@ -35,17 +35,15 @@
     border-radius: 10px;
     font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     text-align: center;
-	font-size:20px;
+		font-size:20px;
     width: 32%;
-	height: 32%;
+		height: 32%;
     top: 50%;
     right: 34%;
-	margin-left: auto;
+		margin-left: auto;
     margin-right: auto;
-	display: block;
-
-
-
+		display: block;
+		padding: 1%;
   }
   .a{
     border: 0;
@@ -72,17 +70,17 @@
     <head>
     <body>
       <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
-        <img class="imgm"  src="../imagens/b.png"/>
+        <a href="paginainicial.php"><img class="imgm"  src="../imagens/b.png"/></a>
       </div>
       <div class="cadastrinho">
-        <?php if ($erros != null) { ?>
-          <div class="alert alert-warning">
-               <?php  foreach ($erros as $e) { ?>
-                  <script> alert ("<?= $e ?>"); </script>
-                <?php } ?>
+				<?php if ($erro != null) { ?>
+					<div class="erro">
+						<?php foreach($erro as $e){ ?>
+								<p> <?=$e;?> </p>
+						<?php	} ?>
 
-          </div>
-        <?php } ?>
+					</div>
+					<?php } ?>
         <br>
         <form action="Control/User/Cadastrauser.php"  method="post">
           <label><b>CADASTRO</b></label><br><br>

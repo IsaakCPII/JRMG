@@ -67,7 +67,7 @@
 <HTML>
   <body>
     <div class="div_sup" class="content" style="transform: translateY(0px); opacity: 1;">
-      <img class="imgm"  src="../imagens/b.png"/>
+      <a href="paginainicial.php"><img class="imgm"  src="../imagens/b.png"/></a>
     </div>
     <div class="cadastrinho"> <br>
 
